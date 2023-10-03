@@ -8,10 +8,7 @@ let browser;
 let page;
 
 When("user browses the page {string}", async function (url) {
-  browser = await chromium.launch({
-    headless: false,
-    slowMo: 1000,
-  });
+  browser = await chromium.launch();
   page = await browser.newPage();
   await page.goto(url);
 });
